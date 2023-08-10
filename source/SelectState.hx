@@ -24,7 +24,7 @@ class SelectState extends MainState
 
 		for (i in 0...songs.length)
 		{
-			var list:FlxText = new FlxText(20, 20 + (i * 50), 0, songs[i], 16);
+			var list:FlxText = new FlxText(20, 20 + (i * 30), 0, songs[i], 16);
 			list.ID = i;
 			list.alignment = LEFT;
 			textSong.add(list);
@@ -54,5 +54,12 @@ class SelectState extends MainState
 			if (txt.ID == curSelected)
 				txt.color = FlxColor.YELLOW;
 		});
+
+		if (FlxG.keys.justPressed.ENTER)
+		{
+			trace("song select: " + songs[curSelected]);
+			PlayState.songName = songs[curSelected];
+			FlxG.switchState(new PlayState());
+		}
 	}
 }
