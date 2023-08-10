@@ -23,7 +23,7 @@ class Song
     public var bmp:Int;
     public var speed:Float = 1;
 
-    public function new()
+    public function new(song, notes, bpm, sections)
     {
         super();
 
